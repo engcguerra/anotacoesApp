@@ -1,0 +1,12 @@
+<h1>app posts</h1>
+
+<a href="{% url 'posts:add_post' %}">adicionar</a>
+<br>
+{% for post in object_list %}
+<p>
+    {{ post.titulo|default:""}}<br>
+    {% if post.imagem %}
+        <img src="{{ post.imagem.url }}" width="400">
+    {% endif %}
+</p>
+{% endfor %}
